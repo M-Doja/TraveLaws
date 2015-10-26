@@ -6,16 +6,28 @@
 	function HomeController() {
 		var vm = this;
 		vm.title = 'Welcome to TraveLaws!';
-		vm.head = 'An app for travellers to know the laws of the land.';
+		// vm.head = 'An app for .';
+		vm.showLaws = true;
 
 		vm.States = [
-			{state: 'ALABAMA', laws: {gen : 'WWW.ca.gov',traf : 'WWWWWW',gun : 'WWWWW',bus : 'WW'}},
-			{state: 'ALASKA', laws: {gen : 'WWW.ca.gov',traf : 'WWWWWW',gun : 'WWWWW',bus : 'WW'}},
-			{state: 'ARIZONA', laws: {gen : 'WWW.ca.gov',traf : 'WWWWWW',gun : 'WWWWW',bus : 'WW'}},
-			{state: 'ARKANSAS', laws: {gen : 'WWW.ca.gov',traf : 'WWWWWW',gun : 'WWWWW',bus : 'WW'}},
-			{state: 'CALIFORNIA', laws: {gen : 'WWW.ca.gov',traf : 'WWWWWW',gun : 'WWWWW',bus : 'WW'}}
+			{state: 'ALABAMA', laws: {gen : 'http://www.alabama.gov/',traf : 'http://www.dmv.org/al-alabama/safety-laws.php',gun : 'http://www.ago.state.al.us/Page-Alabama-Weapon-Law',bus : 'http://www.alabama.gov/category/business'}},
+			{state: 'ALASKA', laws: {gen : 'http://alaska.gov/',traf : 'http://www.dmv.org/ak-alaska/automotive-law/vehicle-code.php',gun : 'http://dps.alaska.gov/statewide/permitslicensing/concealedhandguns.aspx',bus : 'http://alaska.gov/businesshome.html'}},
+			{state: 'ARIZONA', laws: {gen : 'https://az.gov/',traf : 'http://www.dmv.org/az-arizona/automotive-law/vehicle-code.php',gun : 'http://www.azdps.gov/services/concealed_weapons/',bus : 'https://az.gov/work/business'}},
+			{state: 'ARKANSAS', laws: {gen : 'http://www.arkansas.gov/',traf : 'http://www.ghsa.org/html/stateinfo/bystate/ar.html',gun : 'http://asp.arkansas.gov/services-and-programs/detail/concealed-handgun-licensing',bus : 'http://www.arkansas.gov/business/'}},
+			{state: 'CALIFORNIA', laws: {gen : 'http://www.ca.gov',traf : 'https://www.dmv.ca.gov/portal/dmv',gun : 'https://oag.ca.gov/firearms',bus : 'http://business.ca.gov/'}}
 ];
-			// state:  console.log(vm.AL.traf);
+
+for (var i = 0; i < vm.States.length; i++) {
+	for(var prop in vm.States[i]){
+		console.log(vm.States[i][prop]);
+    	for(var prop2 in vm.States[i][prop]){
+				console.log(vm.States[i][prop][prop2]);
+		}
+	}
+}
+
+
+
 	}
 })();
 			//

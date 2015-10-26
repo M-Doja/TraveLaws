@@ -1,6 +1,6 @@
 <div ng-controller="HomeController as vm">
-	<h1>{{vm.title}}</h1>
-	<h4>{{vm.head}}</h4>
+	<h1 style="text-align:center">{{vm.title}}</h1>
+	<h4 style="text-align:center">{{vm.head}}</h4>
 
 <!--
 What will this app do:
@@ -12,16 +12,28 @@ What will this app do:
 What will app use:
 U.S. States as links
 -->
+<form class="form-inline">
+	<div class="well container" style="text-align:center">
+		<p><span style="font-size:1.25em">TraveLaws</span> is designed to be your one stop resource to get law information for differnt U.S. states in North America. Whether you're travelling on vaction and need to know cell phones laws when driving, or you're looking to move your business to another state and want to research the laws regarding new business, TraveLaws is the resource for you!</p>
+	</div>
 <div class="well container">
 	<div class="">
 		<div class="">
+				<h3>Select a category of law for the corresponding state.</h3>
 			<div ng-repeat='s in vm.States'>
-				<a href="#">{{s.state}}</a>
-				<div ng-repeat ='c in s'>{{c.state}}</div>
+				<div style="color: red;font-size:1.5em;">{{s.state}} </div>
+				<div>
+					<a href="{{s.laws.gen}}" >General Laws</a> |
+					<a href="{{s.laws.traf}}" >Traffic Laws</a> |
+					<a href="{{s.laws.gun}}" >Gun Laws</a> |
+					<a href="{{s.laws.bus}}" >Business Laws</a>
+				</div><br>
+				<!-- <div ng-repeat ='c in s'>{{c.laws}}</div> -->
 			</div>
 		</div>
 	</div>
 </div>
+</form>
 
 
 </div>
