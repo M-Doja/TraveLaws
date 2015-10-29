@@ -1,10 +1,12 @@
 (function() {
 	'use strict';
 	angular.module('app')
-	.factory('HomeFactory', HomeFactory);
-	function HomeFactory($http, $q) {
-		
+	.factory('EditFactory', EditFactory);
+	function EditFactory($http, $q) {
 		var o = {};
+
+
+    
 
 		return o;
 	}

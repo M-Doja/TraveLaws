@@ -1,5 +1,6 @@
 <div ng-controller="HomeController as vm">
-	<h1 style="text-align:center">{{vm.title}}</h1>
+
+	<h1 style="text-align:center;font-family:'Architects Daughter', cursive;font-weight:bold">{{vm.title}}</h1>
 	<h4 style="text-align:center">{{vm.head}}</h4>
 
 <!--
@@ -12,23 +13,37 @@ What will this app do:
 What will app use:
 U.S. States as links
 -->
+
+
 <form class="form-inline">
-	<div class="well container" style="text-align:center">
+	<div class="well container" style="text-align:justify;padding:20px">
 		<p><span style="font-size:1.25em">TraveLaws</span> is designed to be your one stop resource to get law information for differnt U.S. states in North America. Whether you're travelling on vaction and need to know cell phones laws when driving, or you're looking to move your business to another state and want to research the laws regarding new business, TraveLaws is the resource for you!</p>
 	</div>
-<div class="well container">
+<div class="well container" style="background-color:rgba(20,100,0,0.3);padding:20px;">
 	<div class="">
 		<div class="">
-				<h3>Select a category of law for the corresponding state.</h3>
+				<h3 style="text-align:center">Select a category of law for the corresponding state.</h3>
+				<hr>
 			<div ng-repeat='s in vm.States'>
-				<div style="color: red;font-size:1.5em;">{{s.state}} </div>
-				<div>
-					<a href="{{s.laws.gen}}" >General Laws</a> |
-					<a href="{{s.laws.traf}}" >Traffic Laws</a> |
-					<a href="{{s.laws.gun}}" >Gun Laws</a> |
-					<a href="{{s.laws.bus}}" >Business Laws</a>
-				</div><br>
-				<!-- <div ng-repeat ='c in s'>{{c.laws}}</div> -->
+				<md-content class="md-padding">
+    <md-card>
+      <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
+      <md-card-content>
+        <h2 class="md-title">{{s.state}}</h2>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+          two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+        </p>
+      </md-card-content>
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button><a href="{{s.laws.gen}}" >General Laws</a></md-button>
+        <md-button><a href="{{s.laws.traf}}" >Traffic Laws</a></md-button>
+				<md-button><a href="{{s.laws.gun}}" >Gun Laws</a></md-button>
+        <md-button><a href="{{s.laws.bus}}" >Business Laws</a></md-button>
+      </div>
+    </md-card>
+
+				<hr>
 			</div>
 		</div>
 	</div>

@@ -3,6 +3,13 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
+var passport = require('passport');
+var mongoose = require('mongoose');
+require('./models/BlogModel');
+require('./models/UserModel');
+require('./config/passport');
+mongoose.connect('mongodb://localhost/TraveLaw');
+// mongoose.connect(process.env.MONGO_STRING);
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -20,11 +27,18 @@ app.set('view options', {
 //middleware that allows for us to parse JSON and UTF-8 from the body of an HTTP request
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+var BlogRoute = require('./routes/BlogRouter');
+var UserRoute = require('./routes/UserRoutes');
+
 
 //on homepage load, render the index page
 app.get('/', function(req, res) {
 	res.render('index');
 });
+
+app.use('/api/blog', BlogRoute);
+app.use('/api/user', UserRoute);
 
 var server = app.listen(port, function() {
 	var host = server.address().address;

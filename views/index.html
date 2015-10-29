@@ -3,20 +3,48 @@
 <head>
 	<title>TraveLaws</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.4/angular-material.css">
+	<!-- <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.css"> -->
+	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
-<body>
+<body ng-controller='GlobalController as nav'>
+				<div layout='row' class="nav navbar-nav navbar-right" >
+						<md-button class="navbar-brand" ng-click="nav.logout()">Logout</md-button>
+						<md-button class="navbar-brand" ui-sref="Home">Home</md-button>
+						<!-- <md-button class="navbar-brand" ui-sref="Profile">Profile</md-button> -->
+						<md-button ui-sref="Profile({id: nav.status._id})">{{nav.status.username}} Profile</md-button>
+						<md-button class="navbar-brand" ui-sref="Family">Blog</md-button>
+				</div>
+				<h3 style="color:red;text-align:right;margin-top:-35px; padding-right:200px">Welcome {{nav.status.username}}</h3>
+				<div class="well container">
+				</div>
+
 	<ui-view></ui-view>
 	<!-- Ext Libs -->
-	<script src="angular/angular.min.js"></script>
-	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
+	<!-- <script src="angular/angular.min.js"></script> -->
+	<!-- <script src="angular-ui-router/release/angular-ui-router.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-aria.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.4/angular-material.min.js"></script>
+
 	<!-- Global Src -->
 	<script src="/javascript/app.js"></script>
 	<!-- Factories -->
 	<script src="/javascript/services/HomeFactory.js"></script>
+	<script src="/javascript/services/UserFactory.js"></script>
+	<script src="/javascript/services/EditFactory.js"></script>
+
 	<!-- Controllers -->
 	<script src="/javascript/controllers/HomeController.js"></script>
+	<script src="/javascript/controllers/GlobalController.js"></script>
+	<script src="/javascript/controllers/ProfileController.js"></script>
+	<script src="/javascript/controllers/BlogController.js"></script>
+	<script src="/javascript/controllers/EditProfileController.js"></script>
+	<script src="/javascript/controllers/EditBlogController.js"></script>
+
 </body>
 </html>
