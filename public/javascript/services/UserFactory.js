@@ -9,7 +9,7 @@
     if(getToken()){
       setUser();
     }
-
+      // LOG-IN / LOG OUT AND REGISTRATION
     o.logout = function(){
       removeToken();
       o.status.username = null;
@@ -28,7 +28,6 @@
       });
       return q.promise;
     };
-
     o.loginUser = function(user) {
       console.log("Second stop of DF journey");
       var q = $q.defer();
@@ -43,6 +42,10 @@
       });
       return q.promise;
     };
+
+  
+
+    // SETTING AUTH TOKEN TO INDIV USER
     function setUser(){
       var user = JSON.parse(urlBase64Decode(getToken().split('.')[1]));
       o.status.username = user.username;
@@ -52,7 +55,6 @@
     function removeUser(){
       o.status.username = null;
       o.status._id = null;
-
     }
     function getToken() {
       return localStorage.getItem('token');
@@ -68,7 +70,7 @@
       removeUser();
     };
 
-
+      // UNICORN MAGIC
     function urlBase64Decode(str) {
       var output = str.replace(/-/g, '+').replace(/_/g, '/');
       switch (output.length % 4) {
@@ -81,10 +83,10 @@
       }
       return decodeURIComponent(escape(window.atob(output))); //polifyll https://github.com/davidchambers/Base64.js
     }
-
     o.getUser = function() {
       return JSON.parse(urlBase64Decode(getToken().split('.')[1]));
     };
+
 
 
 

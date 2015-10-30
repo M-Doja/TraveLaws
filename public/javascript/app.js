@@ -2,7 +2,7 @@
 	'use strict';
 	angular.module('app', ['ui.router', 'ngMaterial', 'angular-carousel'])
 	.config(Config);
-	function Config($stateProvider, $urlRouterProvider) {
+	function Config($stateProvider, $urlRouterProvider, $httpProvider) {
 		$stateProvider.state('Login',{
 			url: '/',
 			templateUrl: 'views/LoginReg.html'
@@ -29,5 +29,7 @@
 			templateUrl: 'views/AddBlog.html'
 		});
 		$urlRouterProvider.otherwise('/');
+		// $httpProvider.interceptors.push('AuthInterceptor');
+
 	}
 })();

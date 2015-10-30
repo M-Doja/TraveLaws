@@ -10,7 +10,18 @@ var auth = jwt({
 });
 
         // reference poll app
-
+  router.post('/',  function(req, res, next) {
+    console.log(req.body);
+    var blog = new Blog(req.body);
+    // blog.createdBy = req.payload._id;
+    blog.created = new Date();
+    blog.deleted = null;
+    blog.save(function(err, result) {
+      if(err) return next(err);
+      if(!result) return next("Could not create the object. Please check all fields.");
+      res.send(result);
+    });
+  });
 
 
 

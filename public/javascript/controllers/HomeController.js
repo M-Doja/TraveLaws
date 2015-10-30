@@ -61,15 +61,15 @@
 			{state: 'WISCONSIN', laws: {gen: 'www', traf: 'www', gun: 'www', bus: 'www'}},
 			{state: 'WYOMING', laws: {gen: 'www', traf: 'www', gun: 'www', bus: 'www'}}
 ];
-
-for (var i = 0; i < vm.States.length; i++) {
-	for(var prop in vm.States[i]){
-		console.log(vm.States[i][prop]);
-    	for(var prop2 in vm.States[i][prop]){
-				console.log(vm.States[i][prop][prop2]);
-		}
-	}
-}
+//
+// for (var i = 0; i < vm.States.length; i++) {
+// 	for(var prop in vm.States[i]){
+// 		// console.log(vm.States[i][prop]);
+//     	for(var prop2 in vm.States[i][prop]){
+// 				// console.log(vm.States[i][prop][prop2]);
+// 		}
+// 	}
+// }
 
 
 

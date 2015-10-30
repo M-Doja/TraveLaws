@@ -6,7 +6,6 @@
     var vm = this;
     vm.isLogin = true; //switch between the login and register view on the login_register.html page
     vm.user = {};
-    // vm.logBtn = true;
     vm.status = UserFactory.status;
 
     vm.logout = function() {

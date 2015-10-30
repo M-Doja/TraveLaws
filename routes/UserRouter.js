@@ -30,7 +30,18 @@ var auth = jwt({
           })(req, res, next);
         });
 
+          console.log('testing the router');
+        router.post('/', auth,function(req, res, next) {
+          console.log('in the router');
+          var user = new User(req.body);
+          user.save(function(err, result) {
+            if(err) return next(err);
+            res.send(result);
+          });
+        });
+        console.log('here on router');
 
+        
 
 
 
