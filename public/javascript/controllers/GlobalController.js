@@ -16,7 +16,7 @@
 
     vm.registerUser = function() {
       UserFactory.registerUser(vm.user).then(function() {
-        $state.go('Home');
+        $state.go('AddProfile');
         // vm.logBtn = false;
       });
     };

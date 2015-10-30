@@ -1,0 +1,29 @@
+<div style="text-align:center"ng-controller='AddProfileController as vm'>
+  <h1 style="text-align:center">Add A Profile</h1>
+  <md-input-container>
+    <label>User Name</label>
+    <input ng-model="vm.user.name">
+  </md-input-container>
+  <md-input-container>
+    <label>Photo Url</label>
+    <input ng-model="vm.user.photo">
+  </md-input-container>
+  <md-input-container>
+    <label>Bio</label>
+    <input ng-model="vm.user.bio">
+  </md-input-container>
+  <md-input-container>
+    <label>Location</label>
+    <input ng-model="vm.user.location">
+  </md-input-container>
+  <md-input-container>
+    <label>States Visted</label>
+    <input ng-model="vm.user.statevisit">
+  </md-input-container>
+  <!-- <md-input-container>
+    <label>Wish List<label>
+    <input ng-model="vm.user.wishlist">
+  </md-input-container> -->
+  <md-button type='submit' class="md-warn">Register</md-button>
+
+</div>

@@ -1,13 +1,43 @@
 <div ng-controller='BlogController as vm'>
 
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<div style="text-align:center"class="page-header">
+          <md-content layout-padding>
+  				<h1>
+  					Stories of the open road! <br><small>Have a cool story to share about your travels? Join our blog community and share stories, tips, and advice on how to make your next trip even more special</small>
+  				</h1>
+          </md-content>
+
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  <div flex="80" layout-wrap >
+  		<md-content  class="md-padding" >
+  			<md-input-container>
+        <input ng-model="searchText" placeholder="Blog Search...">
+      </md-input-container><br>
+  		</md-content >
+  	</div>
+    <ul rn-carousel class="image">
+      <li>slide #1</li>
+      <li>slide #2</li>
+      <li>slide #3</li>
+    </ul>
 
 
-
-
-
-
-
-
+  <div>
+    <md-content layout-padding>
+      Lorem ipsum dolor sit amet, ne quod novum mei.
+      <h1>{{vm.blog.title}}</h1>
+      <h3>{{vm.blog.subject}}</h3>
+      <p>{{vm.blog.body}}</p>
+      <h5>{{vm.blog.created}}</h5>
+      <h4>{{vm.blog.createdBy}}</h4>
+    </md-content>
+  </div>
 
 
 
