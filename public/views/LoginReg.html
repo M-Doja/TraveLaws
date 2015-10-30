@@ -1,44 +1,73 @@
-<div>
-  <br>
-  <div ng-show="nav.isLogin">
-    <form class="well container" ng-submit="nav.loginUser()">
-      <h1 style="color:red;text-align:center;font-family:Sans Serif">Sign In</h1>
+<br>
+<div flex="80" layout-wrap >
+		<md-content  class="md-padding" >
+			<md-input-container>
+      <input ng-model="searchText" placeholder="Search...">
+    </md-input-container><br>
+		</md-content >
+	</div>
+	<div style='margin:3%; margin-left: 120px;'>
+	    <md-content class="md-padding" >
+	      <div   layout="row" layout-wrap>
+	        <md-card flex="80" layout-wrap >
+	          <img ng-src="{{s.photo}}" class="md-card-image" alt="{{s.familyName}}" title="{{s.familyName}}">
+	          <md-card-content flex="100" layout-wrap >
+<div ng-show="nav.isLogin">
+  <form  class="well container" ng-submit="nav.loginUser()">
+    <h1 style="color:red;text-align:center;font-family:Sans Serif">Sign In</h1>
+    <md-input-container>
+    <label style="font-family:Ariel;">Username:</label>
+    <input ng-model="nav.user.username">
+  </md-input-container>
 
-      <label style="font-family:Ariel;">Username:</label>
-      <input class="form-control" required placeholder="Username..." ng-model="nav.user.username">
+  <md-input-container>
+    <label style="font-family:Ariel;">Password:</label>
+    <input type="password" ng-model="nav.user.password">
+  </md-input-container>
 
-      <label style="font-family:Ariel;">Password:</label>
-      <input type="password" class="form-control" required placeholder="Password..." ng-model="nav.user.password">
-
-      <div style="text-align: center">
-        <button type='button' ng-click="nav.isLogin = false;" class="btn btn-info">Register</a>
-        <button type="submit" class="btn btn-primary" >Login</button><br><br>
-      </div>
-    </form>
-  </div>
-
-  <div ng-show="!nav.isLogin">
-    <form class="well container" ng-submit="nav.registerUser()">
-      <h1 style="text-align:center;color:red;">Registration</h1>
-
-      <label style="font-family:Ariel;">User Name</label>
-      <input class="form-control" placeholder="Username..." ng-model="nav.user.username" required>
-
-      <label style="font-family:Ariel;">Email</label>
-      <input class="form-control" type="email" placeholder="Email..." ng-model="nav.user.email" required>
-
-      <label style="font-family:Ariel;">Password</label>
-      <input class="form-control" type="password" placeholder="Password..." ng-model="nav.user.password" required>
-
-      <label style="font-family:Ariel;">Confirm Password</label>
-      <input class="form-control" type="password" placeholder="Confirm Password..." ng-model="nav.user.confirmPassword" required>
-
-      <div ng-show="nav.user.password && nav.user.confirmPassword && !(nav.user.password === nav.user.confirmPassword)" style="color: red">Your passwords must match.</div>
-
-      <div style="text-align:center">
-        <button type="button" ng-click="nav.isLogin = true;" class="btn btn-primary">Login</button>
-        <button type="submit" class="btn btn-info">Submit</button>
-      </div>
-    </form>
-  </div>
+  <md-input-container>
+    <div style="text-align: center">
+      <md-button type='button' ng-click="nav.isLogin = false;" class="btn btn-info">Register</md-button>
+      <md-button type="submit" class="btn btn-primary" >Login</md-button><br><br>
+    </div>
+    <md-input-container>
+  </form>
 </div>
+
+<div ng-show="!nav.isLogin">
+  <form class="well container" ng-submit="nav.registerUser()">
+    <h1 style="text-align:center;color:red;">Registration</h1>
+  <md-input-container>
+    <label style="font-family:Ariel;">User Name</label>
+    <input  ng-model="nav.user.username" required>
+  </md-input-container>
+  <md-input-container>
+    <label style="font-family:Ariel;">Email</label>
+    <input type="email" ng-model="nav.user.email" required>
+  </md-input-container>
+  <md-input-container>
+    <label style="font-family:Ariel;">Password</label>
+    <input type="password" ng-model="nav.user.password" required>
+  </md-input-container>
+  <md-input-container>
+    <label style="font-family:Ariel;">Confirm Password</label>
+    <input type="password" ng-model="nav.user.confirmPassword" required>
+  </md-input-container>
+
+    <div ng-show="nav.user.password && nav.user.confirmPassword && !(nav.user.password === nav.user.confirmPassword)" style="color: red">Your passwords must match.</div>
+
+    <div style="text-align:center">
+      <md-button type="button" ng-click="nav.isLogin = true;" class="btn btn-primary">Back</md-button>
+      <md-button type="submit" class="btn btn-info">Submit</md-button>
+    </div>
+  </form>
+</div>
+</md-card-content>
+	          <div class="md-actions" layout="row" layout-align="end center">
+	            <md-button ui-sref="Family({id: s._id})">View More</md-button>
+	        </div>
+	        </md-card>
+	      </div>
+	      <br/>
+	    </md-content>
+	  </div>

@@ -21,7 +21,7 @@
       $http.post('/api/user/register', user).then(function(res) {
         setToken(res.data);
         setUser();
-        var user = getUser();
+        var user = o.getUser();
         o.status.username = user.username;
         o.status._id = user._id;
         q.resolve(res.data);

@@ -9,7 +9,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
-<body ng-controller='GlobalController as nav'>
+<body ng-controller='GlobalController as nav' style=" margin: 0 auto;">
 				<div layout='row' class="nav navbar-nav navbar-right" >
 						<md-button class="navbar-brand" ng-click="nav.logout()">Logout</md-button>
 						<md-button class="navbar-brand" ui-sref="Home">Home</md-button>
@@ -17,7 +17,7 @@
 						<md-button ui-sref="Profile({id: nav.status._id})">{{nav.status.username}} Profile</md-button>
 						<md-button class="navbar-brand" ui-sref="Family">Blog</md-button>
 				</div>
-				<h3 style="color:red;text-align:right;margin-top:-35px; padding-right:200px">Welcome {{nav.status.username}}</h3>
+				<h3 style="color:red;text-align:right;margin-top:-35px; padding-right:50px">Welcome {{nav.status.username}}</h3>
 				<div class="well container">
 				</div>
 
