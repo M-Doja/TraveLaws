@@ -7,6 +7,7 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 require('./models/BlogModel');
 require('./models/UserModel');
+require('./models/Profile');
 require('./config/passport');
 mongoose.connect('mongodb://localhost/TraveLaw');
 // mongoose.connect(process.env.MONGO_STRING);

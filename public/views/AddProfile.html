@@ -1,31 +1,26 @@
 <div ng-controller='AddProfileController as vm'>
   <h1 style="text-align:center">Add A Profile</h1>
-  <form ng-submit='vm.AddProfile()' style="text-align:center">
-  <md-input-container>
-    <label>User Name</label>
-    <input ng-model="vm.user.name">
-  </md-input-container>
-  <!-- <md-input-container>
+  <form  style="text-align:center">
+    <md-input-container>
+      <label>User Name</label>
+      <input ng-model="vm.profile.name">
+    </md-input-container>
+    <md-input-container>
     <label>Photo Url</label>
-    <input ng-model="vm.user.photo">
+    <input ng-model="nav.user.photo">
   </md-input-container>
   <md-input-container>
     <label>Bio</label>
-    <input ng-model="vm.user.bio">
+    <input ng-model="nav.user.bio">
   </md-input-container>
   <md-input-container>
     <label>Location</label>
-    <input ng-model="vm.user.location">
+    <input ng-model="nav.user.location">
   </md-input-container>
   <md-input-container>
     <label>States Visted</label>
-    <input ng-model="vm.user.statevisit">
-  </md-input-container> -->
-  <!-- <md-input-container>
-    <label>Wish List<label>
-    <input ng-model="vm.user.wishlist">
-  </md-input-container> -->
-  <md-button type='submit' class="md-warn">Register</md-button>
+    <input ng-model="nav.user.statevisit">
+  </md-input-container>  
+  <md-button ng-click='vm.addProfile()' class="md-warn">Register</md-button>
 </form>
-
 </div>

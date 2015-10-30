@@ -17,7 +17,7 @@
   <div flex="80" layout-wrap >
   		<md-content  class="md-padding" >
   			<md-input-container>
-        <input ng-model="searchText" placeholder="Blog Search...">
+        <input ng-model="searchBlog" placeholder="Blog Search...">
       </md-input-container><br>
   		</md-content >
   	</div>
@@ -27,17 +27,21 @@
       <li>slide #3</li>
     </ul>
 
-
-  <div>
+        <!-- Display all the blogs -->
+  <div ng-repeat='b in vm.blog ' >
     <md-content layout-padding>
-      Lorem ipsum dolor sit amet, ne quod novum mei.
-      <h1>{{vm.blog.title}}</h1>
-      <h3>{{vm.blog.subject}}</h3>
-      <p>{{vm.blog.body}}</p>
-      <h5>{{vm.blog.created}}</h5>
-      <h4>{{vm.blog.createdBy}}</h4>
+      <h1>{{b.title}}</h1>
+      <h3>{{b.subject}}</h3>
+      <p>{{b.body}}</p>
+      <h5>{{b.created}}</h5>
+      <h4>{{b.createdBy}}</h4>
+      <div class="md-actions" layout="row" >
+        <md-button ng-click="vm.getBlogById(b)">View More</md-button>
+    </div>
+    <hr>
     </md-content>
   </div>
+
 
 
 

@@ -6,9 +6,15 @@
       <md-button  ui-sref='AddBlog' >Add A Blog</md-button>
     </md-input-container>
     <md-input-container>
-       <md-button ui-sref='EditProfile' >Edit Profile</md-button>
+       <md-button ui-sref='EditProfile({id: p._id})' >Edit Profile</md-button>
     </md-input-container>
   </div>
+
+  <!-- <div ng-repeat='p in profile'> -->
+    <h1 style="padding-top:30px">{{p.name}}</h1>
+    <img src="{{p.photo}}" alt='{{p.name}}'/>
+    <h4>{{vm.profile.bio}}</h4>
+  <!-- </div> -->
 
 
 

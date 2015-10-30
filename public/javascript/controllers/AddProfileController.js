@@ -2,19 +2,30 @@
   "use strict";
   angular.module('app')
   .controller('AddProfileController', AddProfileController);
-  function AddProfileController(HomeFactory, $state) {
+  function AddProfileController(UserFactory, $state, $stateParams) {
     var vm = this;
-    vm.user = {};
+    vm.profile = {};
     vm.status = UserFactory.status;
 
-vm.AddProfile = function(){
-  console.log('adding from controller')
-HomeFactory.createProfile(vm.user).then(function(res){
-  vm.user = res;
+
+    UserFactory.getUserProfile(vm.status._id).then(function(res){
+  			vm.user = res;
 });
+    // Add Profile
+    vm.addProfile = function(){
+      console.log('hi ADD');
+    UserFactory.addProfile(vm.profile).then(function(res){
+      vm.profile = res;
+      vm.profile = {};
+      $state.go('Profile');
+    });
+  };
+vm.showProfile = function(id) {
+  UserFactory.showProfile(vm.profile.id).then(function(res){
+    vm.profile = res
+  })
 };
-
-
+vm.showProfile();
 
   }
 })();

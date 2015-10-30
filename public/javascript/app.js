@@ -27,9 +27,12 @@
 		}).state('AddBlog',{
 			url: '/add_blog',
 			templateUrl: 'views/AddBlog.html'
+		}).state('BlogPage',{
+			url: '/blog_page/:id',
+			templateUrl: 'views/BlogPage.html'
 		});
 		$urlRouterProvider.otherwise('/');
-		// $httpProvider.interceptors.push('AuthInterceptor');
+		$httpProvider.interceptors.push('AuthInterceptor');
 
 	}
 })();

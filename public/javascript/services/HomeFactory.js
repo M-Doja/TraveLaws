@@ -7,22 +7,18 @@
 		var o = {};
 		var blog = {};
 
+// o.getBlogById = function(id){
+// 	var q = $q.defer();
+// 	console.log(id, " in factory getting by id");
+// 	$http.get('/api/blog/:id'+ id).then(function(res){
+// 		console.log('made it back');
+// 		q.resolve(res.data);
+// 	});
+// 	return q.promise;
+// };
 
-		// ADD A NEW PROFILE
-o.createProfile = function(user){
-console.log('Sending to router');
-var q = $q.defer();
-$http.post('/api/user', user).then(function(res){
-	setToken(res.data); //puts the token on localStorage
-	setUser();
-	var user = o.getUser();
-	o.status.username = user.username;
-	o.status._id = user._id;
-	q.resolve(res.data);
-});
-return q.promise;
-};
 
+		// POSTING BLOG IN DATABASE
 o.postBlog = function(blog) {
 	console.log(blog);
 	console.log('on route to post blog');
@@ -33,6 +29,24 @@ o.postBlog = function(blog) {
 	return q.promise;
 };
 
+				// GETTING ALL BLOGS
+o.getAllBlogs = function(){
+	var q = $q.defer();
+	$http.get('/api/blog').then(function(res) {
+		q.resolve(res.data);
+	});
+	return q.promise;
+};
+//
+o.getBlogId = function(id) {
+	var q = $q.defer();
+	console.log(id);
+	$http.get('/api/blog/' + id ).then(function(res) {
+		q.resolve(res.data);
+		console.log(res.data);
+	});
+	return q.promise;
+};
 
 
 
