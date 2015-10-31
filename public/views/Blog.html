@@ -28,7 +28,7 @@
     </ul>
 
         <!-- Display all the blogs -->
-  <div ng-repeat='b in vm.blog ' >
+  <div ng-repeat="b in vm.blog | orderBy:'title'"  >
     <md-content layout-padding>
       <h1>{{b.title}}</h1>
       <h3>{{b.subject}}</h3>

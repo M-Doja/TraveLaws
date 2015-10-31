@@ -16,6 +16,9 @@
                   <p>{{vm.oneBlog.body}}</p>
                   <h5>{{vm.oneBlog.created}}</h5>
                   <h4>{{vm.oneBlog.createdBy}}</h4>
+                    <md-button class="md-raised md-primary" ng-click="showEdit = true" >Edit Blog</md-button>
+                    <md-button class="md-raised md-warn" ng-click="vm.deleteBlog(vm.oneBlog)" >Delete Blog</md-button>
+
                 </md-content>
               </div>
 
@@ -28,4 +31,28 @@
       <br/>
     </md-content>
   </div>
+  <!-- Edit Form -->
+		<form ng-init='edittedBlog = vm.getCopy(vm.oneBlog);' ng-show='showEdit' ng-submit='vm.editBlog(vm.oneBlog._id, edittedBlog); showEdit = false;'>
+    <md-input-container>
+			<label>Title</label>
+			<input  required class="form-control" type='text'  ng-model='edittedBlog.title' placeholder="{{vm.oneBlog.title}}"/>
+    </md-input-container>
+    <md-input-container>
+			<label>Subject</label>
+			<input  class="form-control" type='text'  ng-model='edittedBlog.subject' placeholder="{{vm.oneBlog.subject}}" />
+    </md-input-container>
+    <md-input-container>
+			<label>Body</label>
+			<input   class="form-control" type='text' ng-model='edittedBlog.body' placeholder="{{vm.oneBlog.body}}"/>
+    </md-input-container>
+    <md-input-container>
+			<div style="text-align:center">
+				<md-button class="md-warn" ng-click='showEdit = false' >Cancel</md-button>
+				<md-button type="submit" class="btn btn-success">Submit</md-button>
+			</div>
+    </md-input-container>
+		</form>
+
+
+
 </div>

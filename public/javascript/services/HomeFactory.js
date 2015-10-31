@@ -43,12 +43,26 @@ o.getBlogId = function(id) {
 	console.log(id);
 	$http.get('/api/blog/' + id ).then(function(res) {
 		q.resolve(res.data);
-		console.log(res.data);
+		console.log(res);
 	});
 	return q.promise;
 };
-
-
+o.EditBlog = function(id){
+			var q= $q.defer();
+			$http.put('/api/blog', id).then(function(res){
+			console.log("at Factory");
+				q.resolve(res.data);
+			});
+			o.getAllBlogs();
+			return q.promise;
+		};
+		o.deleteBlog = function(id){
+					var q = $q.defer();
+					$http.delete('/api/blog/' + id).then(function(){
+						q.resolve();
+					});
+					return q.promise;
+				};
 
 		return o;
 	}

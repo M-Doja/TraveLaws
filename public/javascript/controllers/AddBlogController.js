@@ -9,7 +9,8 @@
     vm.PostBlog = function(){
       console.log(vm.blog);
       HomeFactory.postBlog(vm.blog).then(function(){
-        $state.go('Home');
+        vm.blog.sort(Date());
+        $state.go('Blog');
       });
     };
 

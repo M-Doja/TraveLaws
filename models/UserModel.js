@@ -8,11 +8,10 @@ var UserSchema = new mongoose.Schema({
   photo: String,
   location: String,
   bio: String,
+  created: Date,
+  deleted: Date,
   passwordHash: String,
-  salt: String,
-  statevisit: [],
-  wishlist: [],
-  surveys: [{type: mongoose.Schema.Types.ObjectId, ref: 'Survey'}]
+  salt: String
 });
 
 UserSchema.methods.setPassword = function(password) {

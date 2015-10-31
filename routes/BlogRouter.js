@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 var Blog = mongoose.model('Blog');
-var Profile = mongoose.model('Profile');
+var User = mongoose.model('User');
 var jwt = require('express-jwt');
 // this how server knows if user is legit or not
 var auth = jwt({
@@ -56,7 +56,22 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+      // EDIT BLOG
+router.put('/', function(req, res, next) {
+  Blog.update({_id: req.body.IDofBlogToEdit}, req.body.edittedBlog, function(err, result) {
+    if(err) return next(err);
+    if(!result) return next(err);
+    res.send(result);
+  });
+});
 
+    // REMOVE BLOG
+router.delete('/:id', function(req, res, next){
+  Blog.remove({_id: req.params.id}, function(err, result){
+    if(err) return next(err);
+    res.send();
+  });
+});
 
 
 
