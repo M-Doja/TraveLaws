@@ -41,6 +41,15 @@
   vm.getCopy = function(blog) {
   					return angular.copy(blog);
   			};
+
+          // ADD A BLOG
+  // vm.PostBlog = function(){
+  //   console.log(vm.blog);
+  //   HomeFactory.postBlog(vm.blog).then(function(res){
+  //     $state.go('Blog');
+  //   });
+  // };
+
   vm.editBlog = function(blogId, blog){
 			//Pass blog ID and editted blog info as one object to HomeFactory edit function
 			HomeFactory.EditBlog({IDofBlogToEdit: blogId, edittedBlog: blog}).then(function(res){

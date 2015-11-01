@@ -29,12 +29,13 @@
 
         <!-- Display all the blogs -->
   <div ng-repeat="b in vm.blog | orderBy:'title'"  >
-    <md-content layout-padding>
-      <h1>{{b.title}}</h1>
-      <h3>{{b.subject}}</h3>
-      <p>{{b.body}}</p>
-      <h5>{{b.created}}</h5>
-      <h4>{{b.createdBy}}</h4>
+    <md-content layout-padding >
+      <h1 style="padding-left:50px">{{b.title}}</h1>
+      <h3 style="padding-left:50px">{{b.subject}}</h3>
+      <img style="padding-left:50px" height='400' width='400' ng-src='{{b.photo}}'>
+      <p style="padding-left:50px">{{b.body}}</p>
+      <h5 style="padding-left:50px">{{b.created}}</h5>
+      <h4 style="padding-left:50px">{{b.createdBy}}</h4>
       <div class="md-actions" layout="row" >
         <md-button ng-click="vm.getBlogById(b)">View More</md-button>
     </div>

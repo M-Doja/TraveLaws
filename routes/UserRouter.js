@@ -14,8 +14,17 @@ var auth = jwt({
 
 console.log('user router');
 
+router.param('id', function(req,res,next,id){
+  console.log(id);
+User.findOne({_id:id}, function(err,result){
+  if(err) return next(err);
+  if(!result) return next({err: "Couldnt find a user with that id"});
+  // console.log(result);
+  req.user = result;
+  next();
+  });
+});
 
-// reference poll app
 router.post('/register', function(req, res, next) {
   console.log('hi there');
   var user = new User(req.body);
@@ -35,32 +44,11 @@ router.post('/login', function(req, res, next) {
 });
 
 
-// show profile page
-router.get('/:id', function(req, res, next) {
-  Profile
-  .findOne({_id: req.params.id}, function(err, result)  {
-    if(err) return next(err);
-    res.send(result);
-  });
-});
-
-    // add new profile
-  console.log('testing the router');
-router.post('/', auth,function(req, res, next) {
-  console.log('in the router');
-  var pro = new Profile(req.body);
-  pro.save(function(err, result) {
-    if(err) return next(err);
-    res.send(result);
-  });
-});
-
-
-
+    // GET SINGLE BLOG
 console.log('here on router');
 router.get('/:id', function(req,res,next){
   console.log("made it to route file");
-  Profile
+  User
   .findOne({_id: req.params.id},
     function(err,result){
       if(err) return next(err);
@@ -69,6 +57,21 @@ router.get('/:id', function(req,res,next){
     });
 });
 
+    // ADDING BLOG BY USER
+// router.post('/:id/add_blog', function(req,res,next){
+//   console.log("HELLO!");
+// // console.log(req.payload._id);
+// User
+//   .findOne({_id: req.params.id})
+//     .populate('blog','title')
+//     .exec(function(err,result){
+//       if(err) return next(err);
+//       if(!result) return next("There was an issue posting the blog");
+//       // console.log(req.payload.username);
+// console.log(result);
+//       res.send(result);
+//     });
+// });
 
 
 

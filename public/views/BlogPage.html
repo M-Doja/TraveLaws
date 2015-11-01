@@ -2,16 +2,16 @@
   <div>
     <md-content class="md-padding" >
       <div   layout="row" layout-wrap>
-        <md-card  flex="35" layout-wrap >
+        <md-card  flex="50" layout-wrap >
           <!-- <img ng-src="{{s.photo}}" class="md-card-image" alt="{{s.familyName}}" title="{{s.familyName}}"> -->
           <md-card-content flex="100" layout-wrap>
-            <div flex="30" layout-wrap>
+            <div flex="10" layout-wrap>
                 <!-- <h2 class="md-title">{{s.familyName}}</h2> -->
             </div>
-              <div  >
-                <h1>One Blog</h1>
+              <div style='text-align:center' >
                 <md-content layout-padding>
                   <h1>{{vm.oneBlog.title}}</h1>
+                  <img style="padding-left:-5px" height='400' width='400' ng-src='{{vm.oneBlog.photo}}'>
                   <h3>{{vm.oneBlog.subject}}</h3>
                   <p>{{vm.oneBlog.body}}</p>
                   <h5>{{vm.oneBlog.created}}</h5>

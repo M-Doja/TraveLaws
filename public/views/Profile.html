@@ -10,10 +10,12 @@
     </md-input-container>
   </div>
 
-  <div ng-repeat='p in vm.profile'>
-    <h1 style="padding-top:30px">{{p.name}}</h1>
-    <!-- <img src="{{p.photo}}" alt='{{p.name}}'/> -->
+  <div >
+    <h1 style="padding-top:30px">{{vm.profile.name}}</h1>
+    <img src="{{vm.profile.photo}}" alt='{{vm.profile.name}}'/>
+    <h4>{{vm.profile.location}}</h4>
     <h4>{{vm.profile.bio}}</h4>
+    <h4>{{vm.profile.statevisit}}</h4>
   </div>
 
 

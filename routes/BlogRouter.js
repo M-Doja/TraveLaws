@@ -25,9 +25,9 @@ router.param('id', function(req, res, next, id){
 
         // ADD BLOG
 router.post('/',  function(req, res, next) {
-  console.log(req.body);
+  console.log('hello world');
+  // console.log(req.body);
   var blog = new Blog(req.body);
-  // blog.createdBy = req.payload._id;
   blog.created = new Date();
   blog.deleted = null;
   blog.save(function(err, result) {

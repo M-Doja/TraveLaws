@@ -10,7 +10,7 @@
 			url: '/home',
 			templateUrl: 'views/Home.html'
 		}).state('Profile',{
-			url: '/profile',
+			url: '/profile/:id',
 			templateUrl: 'views/Profile.html'
 		}).state('Blog',{
 			url: '/blog',

@@ -7,6 +7,7 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 require('./models/BlogModel');
 require('./models/UserModel');
+require('./models/ProfileModel');
 require('./config/passport');
 mongoose.connect('mongodb://localhost/TraveLaw');
 // mongoose.connect(process.env.MONGO_STRING);
@@ -30,6 +31,7 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 var BlogRoute = require('./routes/BlogRouter');
 var UserRoute = require('./routes/UserRouter');
+var ProfileRoute = require('./routes/ProfileRouter');
 
 
 //on homepage load, render the index page
@@ -39,6 +41,8 @@ app.get('/', function(req, res) {
 
 app.use('/api/blog', BlogRoute);
 app.use('/api/user', UserRoute);
+app.use('/api/profile', ProfileRoute);
+
 
 var server = app.listen(port, function() {
 	var host = server.address().address;
