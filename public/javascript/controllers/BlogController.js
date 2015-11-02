@@ -34,10 +34,14 @@
     });
   };
   vm.ShowBlogs();
+
+
   vm.getBlogById = function(oneBlog){
     localStorage.setItem("oneBlog", JSON.stringify(oneBlog));
     $state.go('BlogPage',{id: oneBlog._id});
   };
+
+  
   vm.getCopy = function(blog) {
   					return angular.copy(blog);
   			};

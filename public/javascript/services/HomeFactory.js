@@ -38,15 +38,15 @@ o.getAllBlogs = function(){
 	return q.promise;
 };
 //
-o.getBlogId = function(id) {
-	var q = $q.defer();
-	console.log(id);
-	$http.get('/api/blog/' + id ).then(function(res) {
-		q.resolve(res.data);
-		console.log(res);
-	});
-	return q.promise;
-};
+// o.getBlogId = function(id) {
+// 	var q = $q.defer();
+// 	console.log(id);
+// 	$http.get('/api/blog/' + id ).then(function(res) {
+// 		q.resolve(res.data);
+// 		console.log(res);
+// 	});
+// 	return q.promise;
+// };
 o.EditBlog = function(id){
 			var q= $q.defer();
 			$http.put('/api/blog', id).then(function(res){

@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 var Blog = mongoose.model('Blog');
+var Profile = mongoose.model('Profile');
 var User = mongoose.model('User');
 var jwt = require('express-jwt');
 // this how server knows if user is legit or not
@@ -47,14 +48,14 @@ router.get('/', function(req, res, next) {
 
 
       // GET SINGLE BLOG BY ID
-router.get('/:id', function(req, res, next) {
-  console.log("in the one blog route");
-  Blog.findOne({_id: req.params.id}, function(err, result) {
-    if(err) return next(err);
-    console.log(result);
-    res.send(result);
-  });
-});
+// router.get('/:id', function(req, res, next) {
+//   console.log("in the one blog route");
+//   Blog.findOne({_id: req.params.id}, function(err, result) {
+//     if(err) return next(err);
+//     console.log(result);
+//     res.send(result);
+//   });
+// });
 
       // EDIT BLOG
 router.put('/', function(req, res, next) {

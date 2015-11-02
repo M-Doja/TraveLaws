@@ -8,26 +8,23 @@
     vm.profile = {};
     vm.status = UserFactory.status;
 
-//     vm.getProfile = function() {
+//     console.log('add pro  ctrl');
 //     UserFactory.getUserProfile(vm.status._id).then(function(res){
 //   			vm.user = res;
 // });
-// }; vm.getProfile();
     // Add Profile
-    vm.addProfile = function(){
-      console.log('hi ADD');
-    UserFactory.addProfile(vm.profile, vm.status._id).then(function(res){
-      vm.newProfile = res;
-      vm.newProfile = {};
-      $state.go('Profile');
-    });
-  };
-// vm.showProfile = function(id) {
-//     UserFactory.showProfile(vm.profile.id).then(function(res){
-//     vm.profile = res
-//   })
-// };
-// vm.showProfile();
+    // ----------------------------------------
+  vm.addProfile = function(){
+    console.log('hi ADD');
+  UserFactory.addProfile(vm.profile).then(function(res){
+    vm.newProfile = res;
+    vm.newProfile = {};
+    $state.go('Profile');
+  });
+};
+  // --------------------------------------------------------
+
+  
 
   }
 })();

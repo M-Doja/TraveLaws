@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var User = mongoose.model('User');
 var Blog = mongoose.model('Blog');
+var Profile = mongoose.model('Profile');
 var jwt = require('express-jwt');
 var passport = require('passport');
 
@@ -15,8 +16,8 @@ var auth = jwt({
 console.log('user router');
 
 router.param('id', function(req,res,next,id){
-  console.log(id);
-Profile.findOne({_id:id}, function(err,result){
+Profile
+.findOne({_id:id}, function(err,result){
   if(err) return next(err);
   if(!result) return next({err: "Couldnt find a user with that id"});
   // console.log(result);
@@ -24,26 +25,40 @@ Profile.findOne({_id:id}, function(err,result){
   next();
   });
 });
-
-router.post('/:id/add_profile', auth,function(req,res,next){
+      // ADDING PROFILE
+router.post('/', auth,function(req,res,next){
+  console.log('in profile route');
 var profile = new Profile(req.body);
-profile.members.push(req.user.id);
-// console.log(fam);
 profile.save(function(err,result){
-  // console.log(fam._id);
-  // console.log(User);
-  // console.log(req.body.familyName);
-  profile.update({_id: req.user.id}, {$push: {family: fam}},
-    function (err, result) {
-  // if (err) res.status(500).send({err: "Error updating"});
-  // if(!result) res.status(500).send({err: "Error updating"});
-  // console.log(fam);
   res.send(result);
     });
   });
+
+    // Show All Profiles
+router.get('/', function(req, res, next) {
+  console.log('show pro route');
+  Profile.find({}, function(err, result) {
+    if(err) return next(err);
+    res.send(result);
+  });
 });
 
+// EDIT Profile
+router.put('/', function(req, res, next) {
+Profile.update({_id: req.body.IDofProfileToEdit}, req.body.edittedProfile, function(err, result) {
+if(err) return next(err);
+if(!result) return next(err);
+res.send(result);
+});
+});
 
+// REMOVE Profile
+router.delete('/:id', function(req, res, next){
+Profile.remove({_id: req.params.id}, function(err, result){
+if(err) return next(err);
+res.send();
+});
+});
 
 
 

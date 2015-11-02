@@ -10,7 +10,7 @@
 			url: '/home',
 			templateUrl: 'views/Home.html'
 		}).state('Profile',{
-			url: '/profile/:id',
+			url: '/profile',
 			templateUrl: 'views/Profile.html'
 		}).state('Blog',{
 			url: '/blog',
@@ -21,6 +21,9 @@
 		}).state('AddProfile',{
 			url: '/add_profile',
 			templateUrl: 'views/AddProfile.html'
+		}).state('ProfilePage',{
+			url: '/profile_page/:id',
+			templateUrl: 'views/ProfilePage.html'
 		}).state('EditBlog',{
 			url: '/edit_blog/:id',
 			templateUrl: 'views/EditBlog.html'

@@ -44,37 +44,46 @@
     };
 
     // ADD A NEW PROFILE
-  o.addProfile = function(user,id){
+  o.addProfile = function(user){
   console.log('Sending to router');
   var q = $q.defer();
-  $http.post('/api/user/'+ id + '/add_profile', user).then(function(res){
+  $http.post('/api/profile/', user).then(function(res){
   q.resolve(res.data);
   });
   return q.promise;
   };
 
-o.showProfile = function(id) {
+      // Show All Profiles
+o.showProfiles = function() {
+  console.log('show pro fact');
   var q = $q.defer();
-  $http.get('/api/user/' + id).then(function(res){
+  $http.get('/api/profile/').then(function(res){
     q.resolve(res.data)
   });
   return q.promise;
 };
 
+o.EditProfile = function(id){
+			var q= $q.defer();
+			$http.put('/api/profile', id).then(function(res){
+			console.log("at Factory");
+				q.resolve(res.data);
+			});
+			o.showProfiles();
+			return q.promise;
+		};
+o.deleteProfile = function(id){
+			var q = $q.defer();
+			$http.delete('/api/profile/' + id).then(function(){
+				q.resolve();
+			});
+			return q.promise;
+		};
 
 
-//
-//   o.getUserProfile = function(id){
-//   // console.log("just got to factory about to go to route");
-//   var q = $q.defer();
-//   // console.log(user._id + " user._id in factory");
-//   $http.get('/api/user/' + id).then(function(res){
-//     q.resolve(res.data);
-//     // console.log(res.data + 'res.data from factory being sent back to controller');
-//   });
-//   // console.log(q.promise + "q.promise from factory");
-//   return q.promise;
-// };
+
+
+
 
 
     // SETTING AUTH TOKEN TO INDIV USER
@@ -118,18 +127,7 @@ o.showProfile = function(id) {
     o.getUser = function() {
       return JSON.parse(urlBase64Decode(getToken().split('.')[1]));
     };
-      // POST BLOG TIED TO USER
-    o.postBlog = function(blog,id){
-    var q = $q.defer();
-    // console.log(story + 'story');
-    // console.log(id + 'id');
-    console.log('post single blog');
-    $http.post('/api/user/' +id+ '/add_blog', blog)
-    .then(function(res){
-    q.resolve(res.data);
-     });
-    return q.promise;
-    };
+
 
 
 

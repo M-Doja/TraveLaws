@@ -14,26 +14,26 @@
   		</div>
   	</div>
   </div>
-  <div flex="80" layout-wrap >
+  <!-- <div flex="80" layout-wrap >
   		<md-content  class="md-padding" >
   			<md-input-container>
         <input ng-model="searchBlog" placeholder="Blog Search...">
       </md-input-container><br>
   		</md-content >
-  	</div>
+  	</div> -->
     <ul rn-carousel class="image">
-      <li>slide #1</li>
-      <li>slide #2</li>
-      <li>slide #3</li>
+      <li ng-repeat="b in vm.blog">
+        <div class="layer"><img ng-src='{{ b.photo }}'</div>
+      </li>
     </ul>
 
         <!-- Display all the blogs -->
   <div ng-repeat="b in vm.blog | orderBy:'title'"  >
     <md-content layout-padding >
       <h1 style="padding-left:50px">{{b.title}}</h1>
-      <h3 style="padding-left:50px">{{b.subject}}</h3>
       <img style="padding-left:50px" height='400' width='400' ng-src='{{b.photo}}'>
-      <p style="padding-left:50px">{{b.body}}</p>
+
+      <h3 style="padding-left:50px">{{b.subject}}</h3>
       <h5 style="padding-left:50px">{{b.created}}</h5>
       <h4 style="padding-left:50px">{{b.createdBy}}</h4>
       <div class="md-actions" layout="row" >
