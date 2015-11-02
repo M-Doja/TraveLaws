@@ -80,7 +80,18 @@ o.deleteProfile = function(id){
 			return q.promise;
 		};
 
-
+    o.getUserProfile = function(id){
+      // console.log("just got to factory about to go to route");
+      var q = $q.defer();
+      // console.log(user._id + " user._id in factory");
+      $http.get('/api/user/'+id+'/family')
+      .then(function(res){
+        q.resolve(res.data);
+        // console.log(res.data + 'res.data from factory being sent back to controller');
+      });
+      console.log(q.promise + "q.promise from factory");
+      return q.promise;
+    };
 
 
 

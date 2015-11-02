@@ -1,14 +1,13 @@
 <div ng-controller='ProfileController as vm'>
-<md-content>
+<md-content style="background-color:#cfb0a0">
   <div>
-    <h1>Welcome to {{vm.oneProfile.memberName}}'s page!</h1>
+    <h1 style="text-align:center">Welcome to {{vm.oneProfile.memberName}}'s page!</h1>
     <img style="padding-left:-5px" size='80%' ng-src='{{vm.oneProfile.photo}}'>
-    <h5>{{vm.oneProfile.location}}</h5>
-    <div>{{vm.oneProfile.bio}}</div>
-    <p><span style="font-weight:bold">States Visited:</span></p>
-    <ul>
-      <li>{{vm.oneProfile.statevisit}}<li>
-    </ul>
+    <h3 style="padding:15px"> Location: {{vm.oneProfile.location}}</h3>
+
+    <div style="padding:15px">{{vm.oneProfile.bio}}</div>
+    <p style="padding:15px"><span style="font-weight:bold">States Visited: </span>- {{vm.oneProfile.statevisit}}</p>
+      <p style="padding:15px"><p>
     <md-button class="md-raised md-primary" ng-click="showEdit = true" >Edit Profile</md-button>
     <md-button class="md-raised md-warn" ng-show='showEdit' ng-click="vm.deleteProfile(vm.oneProfile)" >Delete Profile</md-button>
   </div>

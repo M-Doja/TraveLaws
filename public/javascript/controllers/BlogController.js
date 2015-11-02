@@ -8,6 +8,10 @@
     vm.posts = [];
     vm.posts.push(vm.blog);
   	vm.edittedBlog = {};
+    vm.comment = {};
+    vm.showComment = false;
+    vm.NoComment = false;
+    vm.YesComment = false;
 
     if(localStorage.oneBlog){
       vm.oneBlog = JSON.parse(localStorage.oneBlog);
@@ -41,18 +45,11 @@
     $state.go('BlogPage',{id: oneBlog._id});
   };
 
-  
+
   vm.getCopy = function(blog) {
   					return angular.copy(blog);
   			};
 
-          // ADD A BLOG
-  // vm.PostBlog = function(){
-  //   console.log(vm.blog);
-  //   HomeFactory.postBlog(vm.blog).then(function(res){
-  //     $state.go('Blog');
-  //   });
-  // };
 
   vm.editBlog = function(blogId, blog){
 			//Pass blog ID and editted blog info as one object to HomeFactory edit function
@@ -73,6 +70,39 @@
         $state.go('Blog');
 				});
 			};
+      vm.addCom = function(){
+      			console.log("adding comment");
+      		HomeFactory.postCom(vm.comment).then(function(res){
+      				console.log('comment added');
+      			vm.comment = res.body;
+      			console.log(res.body);
+      			if(!$stateParams.id) $state.go('Home');
+      			HomeFactory.getBlogById($stateParams.id).then(function(res){
+      				console.log(res);
+      				vm.blog = res;
+      			});
+      		});
+      		vm.comment = {};
+      	};
+      	vm.showCom = function(){
+      		HomeFactory.displayCom(vm.comment).then(function(res){
+      			vm.comment = res;
+      			console.log(res);
+      		});
+      	};
+
+
+      	vm.ShowCom = function(){
+      		vm.showComment = true;
+      		vm.NoComment = true;
+      		vm.YesComment = true;
+      	};
+
+      	vm.HideCom = function(){
+      		vm.showComment = false;
+      		vm.NoComment = false;
+      		vm.YesComment = false;
+      	};
 
 
 

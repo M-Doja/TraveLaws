@@ -55,7 +55,9 @@
 				});
 			};
 
-
+      // UserFactory.getUserBlog(vm.status._id).then (function(res){
+      //   vm.user = res;
+      // });
 
 
 

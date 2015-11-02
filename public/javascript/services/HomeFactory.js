@@ -7,16 +7,6 @@
 		var o = {};
 		var blog = {};
 
-// o.getBlogById = function(id){
-// 	var q = $q.defer();
-// 	console.log(id, " in factory getting by id");
-// 	$http.get('/api/blog/:id'+ id).then(function(res){
-// 		console.log('made it back');
-// 		q.resolve(res.data);
-// 	});
-// 	return q.promise;
-// };
-
 
 		// POSTING BLOG IN DATABASE
 o.postBlog = function(blog) {
@@ -37,16 +27,7 @@ o.getAllBlogs = function(){
 	});
 	return q.promise;
 };
-//
-// o.getBlogId = function(id) {
-// 	var q = $q.defer();
-// 	console.log(id);
-// 	$http.get('/api/blog/' + id ).then(function(res) {
-// 		q.resolve(res.data);
-// 		console.log(res);
-// 	});
-// 	return q.promise;
-// };
+
 o.EditBlog = function(id){
 			var q= $q.defer();
 			$http.put('/api/blog', id).then(function(res){
@@ -63,6 +44,11 @@ o.EditBlog = function(id){
 					});
 					return q.promise;
 				};
+
+
+
+
+
 
 		return o;
 	}

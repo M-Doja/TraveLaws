@@ -1,67 +1,54 @@
 <br>
 
-	<div style='margin:3%; margin-left: 170px;'>
-	    <md-content class="md-padding" >
-	      <div   layout="row" layout-wrap>
-	        <md-card flex="80" layout-wrap >
-	          <img ng-src="{{s.photo}}" class="md-card-image" alt="{{s.familyName}}" title="{{s.familyName}}">
-	          <md-card-content flex="100" layout-wrap >
-<div ng-show="nav.isLogin">
-  <form  class="well container" ng-submit="nav.loginUser()">
-    <h1 style="color:red;text-align:center;font-family:Sans Serif">Sign In</h1>
-    <md-input-container>
-    <label style="font-family:Ariel;">Username:</label>
-    <input ng-model="nav.user.username">
-  </md-input-container>
+					<div >
+						<div ng-show="nav.isLogin">
+						  <form style='color:red ;background-image:url("http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg");background-repeat:no-repeat;background-size: 1400px' class="well container" ng-submit="nav.loginUser()">
+						    <h1 style="color:red;text-align:center;font-family:Sans Serif">TraveLaws Sign In</h1>
+						    <md-input-container style='color:white; font-weight:bold'>
+							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Username:</label>
+							    <input style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" ng-model="nav.user.username">
+							  </md-input-container>
 
-  <md-input-container>
-    <label style="font-family:Ariel;">Password:</label>
-    <input type="password" ng-model="nav.user.password">
-  </md-input-container>
+							  <md-input-container>
+							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" >Password:</label>
+							    <input  style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" type="password" ng-model="nav.user.password">
+							  </md-input-container>
 
-  <md-input-container>
-    <div style="text-align: center">
-      <md-button type='button' ng-click="nav.isLogin = false;" class="btn btn-info">Register</md-button>
-      <md-button type="submit" class="btn btn-primary" >Login</md-button><br><br>
-    </div>
-    <md-input-container>
-  </form>
-</div>
+							  <md-input-container>
+							    <div style="text-align: center">
+							      <md-button style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center;padding-right:45px"type='button' ng-click="nav.isLogin = false;" class="md-primary">Register</md-button>
+							      <md-button style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center;margin-left:50px;padding-left:65px"type="submit" class="md-primary" >Login</md-button><br><br>
+							    </div>
+								</md-input-container>
+							  </form>
+							</div>
 
-<div ng-show="!nav.isLogin">
-  <form class="well container" ng-submit="nav.registerUser()">
-    <h1 style="text-align:center;color:red;">Registration</h1>
-  <md-input-container>
-    <label style="font-family:Ariel;">User Name</label>
-    <input  ng-model="nav.user.username" required>
-  </md-input-container>
-  <md-input-container>
-    <label style="font-family:Ariel;">Email</label>
-    <input type="email" ng-model="nav.user.email" required>
-  </md-input-container>
-  <md-input-container>
-    <label style="font-family:Ariel;">Password</label>
-    <input type="password" ng-model="nav.user.password" required>
-  </md-input-container>
-  <md-input-container>
-    <label style="font-family:Ariel;">Confirm Password</label>
-    <input type="password" ng-model="nav.user.confirmPassword" required>
-  </md-input-container>
+						<div ng-show="!nav.isLogin">
+						  <form class="well container" ng-submit="nav.registerUser()">
+						    <h1 style="text-align:center;color:red;">Registration</h1>
+							  <md-input-container>
+							    <label style="font-family:Ariel;">User Name</label>
+							    <input  ng-model="nav.user.username" required>
+							  </md-input-container>
+							  <md-input-container>
+							    <label style="font-family:Ariel;">Email</label>
+							    <input type="email" ng-model="nav.user.email" required>
+							  </md-input-container>
+							  <md-input-container>
+							    <label style="font-family:Ariel;">Password</label>
+							    <input type="password" ng-model="nav.user.password" required>
+							  </md-input-container>
+							  <md-input-container>
+							    <label style="font-family:Ariel;">Confirm Password</label>
+							    <input type="password" ng-model="nav.user.confirmPassword" required>
+							  </md-input-container>
 
-    <div ng-show="nav.user.password && nav.user.confirmPassword && !(nav.user.password === nav.user.confirmPassword)" style="color: red">Your passwords must match.</div>
+						    <div ng-show="nav.user.password && nav.user.confirmPassword && !(nav.user.password === nav.user.confirmPassword)" style="color: red">Your passwords must match.</div>
 
-    <div style="text-align:center">
-      <md-button type="button" ng-click="nav.isLogin = true;" class="btn btn-primary">Back</md-button>
-      <md-button type="submit" class="btn btn-info">Submit</md-button>
-    </div>
-  </form>
-</div>
-</md-card-content>
-	          <div class="md-actions" layout="row" layout-align="end center">
-	            <md-button ui-sref="Family({id: s._id})">View More</md-button>
-	        </div>
-	        </md-card>
-	      </div>
-	      <br/>
-	    </md-content>
-	  </div>
+						    <div style="text-align:center">
+						      <md-button type="button" ng-click="nav.isLogin = true;" class="btn btn-primary">Back</md-button>
+						      <md-button type="submit" class="btn btn-info">Submit</md-button>
+						    </div>
+						  </form>
+						</div>
+					</div>

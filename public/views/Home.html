@@ -1,4 +1,4 @@
-<div ng-controller="HomeController as vm">
+<div style="background-color:#eea84f"ng-controller="HomeController as vm">
 
 	<div style="text-align:center;font-family:'Architects Daughter', cursive;font-size:5em;font-weight:bold">{{vm.title}}</div>
 	<h4 style="text-align:center">{{vm.head}}</h4>
@@ -17,24 +17,22 @@ U.S. States as links
 
 <form class="form-inline">
 	<div class="well container" style="text-align:justify;padding:20px">
-		<p><span style="font-size:1.25em">TraveLaws</span> is designed to be your one stop resource to get law information for differnt U.S. states in North America. Whether you're travelling on vaction and need to know cell phones laws when driving, or you're looking to move your business to another state and want to research the laws regarding new business, TraveLaws is the resource for you!</p>
+		<p style="font-size:20px"><span style="font-size:1.5em">TraveLaws</span> is your one stop resource for law information on different U.S. states. Whether you're on vaction or you're looking to move your business to another state, TraveLaws is the resource for you!</p>
 	</div>
 <div class="well container" style="background-color:rgba(20,100,0,0.3);padding:20px;">
-	<div class="">
-		<div class="">
+	<div >
+		<div>
 				<h3 style="text-align:center">Select a category of law for the corresponding state.</h3>
 				<hr>
 			<div ng-repeat='s in vm.States'>
 				<md-content class="md-padding">
-    <md-card>
+    <md-card >
       <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
-      <md-card-content>
+      <md-card-content id='statePic' style="background-image:url('{{s.image}}');background-repeat: no-repeat;text-align:center;background-size:10%;padding-top:10px">
+
         <h2 class="md-title">{{s.state}}</h2>
-        <!-- <p>
-          The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-          two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-        </p> -->
       </md-card-content>
+
       <div class="md-actions" layout="row" layout-align="end center">
         <md-button><a target='_blank' href="{{s.laws.gen}}" >General Laws</a></md-button>
         <md-button><a target='_blank' href="{{s.laws.traf}}" >Traffic Laws</a></md-button>
@@ -45,6 +43,9 @@ U.S. States as links
 
 				<hr>
 			</div>
+			<md-content>
+				<h3 style="text-align:center;color:red;font-weight:bold">More states coming soon!</h3>
+			</md-content>
 		</div>
 	</div>
 </div>

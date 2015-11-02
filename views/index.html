@@ -9,6 +9,20 @@
 	<!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.css"> -->
 	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
+	<style rel="text/css">
+	.picContainer {
+			width: 200px;
+			height: 120px;
+			padding-bottom: 20px;
+	}
+
+	/* resize images */
+	.picContainer img {
+			width: 100%;
+			height: auto;
+	}
+
+	</style>
 </head>
 <body ng-controller='GlobalController as nav' style=" margin: 0 auto;">
 				<div style="background-color:#05161f;color:#f6f2a9"layout='row' class="nav navbar-nav navbar-right" >
@@ -19,8 +33,8 @@
 						<md-button class="navbar-brand" ui-sref="Blog">Blog</md-button>
 				</div>
 				<h3 style="color:red;text-align:right;margin-top:-35px; padding-right:50px">Welcome {{nav.status.username}}</h3>
-				<div class="well container">
-				</div>
+				<!-- <div class="well container">
+				</div> -->
 
 	<ui-view></ui-view>
 	<!-- Ext Libs -->

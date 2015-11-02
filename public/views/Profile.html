@@ -1,4 +1,4 @@
-<div ng-controller='ProfileController as vm'>
+<div style="background-color:#c7b5af"ng-controller='ProfileController as vm'>
   <h1 style="text-align:center">User Profiles</h1>
   <hr>
   <div layout="row">
@@ -7,26 +7,19 @@
     </md-input-container>
   </div>
   <div ng-repeat='p in vm.profile | orderBy: "memberName"'>
-    <md-content layout-padding >
+    <md-content style="background-color:#f6ca83" layout-padding >
       <h1 style="padding-top:30px">{{p.memberName}}</h1>
-      <img src="{{p.photo}}" alt='{{p.memberName}}'/>
-      <p style="text-align:center;margin-top:-150px">Location: <span style="font-weight:bold">{{p.location}}</span></p>
-      <p style="text-align:center;margin-bottom:150px">States Visited: <span style="font-weight:bold;">{{p.statevisit}}</span></p>
+
+      <div class="picContainer">
+        <img  src="{{p.photo}}" alt='{{p.memberName}}'/>
+      </div style='padding-bottom:5px;'>
+
+      <p >Location: <span style="font-weight:bold">{{p.location}}</span></p>
+      <p>States Visited: <span style="font-weight:bold;">{{p.statevisit}}</span></p>
       <md-input-container>
-         <md-button ng-click='vm.getProfileById(p)' >View {{p.memberName}}'s  Profile</md-button>
+         <md-button class='md-warn' style='font-size:18px' ng-click='vm.getProfileById(p)' >View {{p.memberName}}'s  Profile</md-button>
       </md-input-container>
     </md-content layout-padding >
     <hr>
   </div>
-
-
-
-
-
-
-
-
-
-
-
 </div> <!-- End of controller  -->

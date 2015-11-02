@@ -44,6 +44,19 @@ router.get('/', function(req, res, next) {
     if(err) return next(err);
     res.send(result);
   });
+  // Profile
+  //   .findOne({_id: req.params.id},'blogs',function(err,result){
+  //     if(err) return next(err);
+  //     if(!result) return next({err: "Couldnt find a user with that id"});
+  //     // console.log(result);
+  //   })
+  //   .populate('createdBy', 'user')
+  //   .exec(
+  //     function(err,result){
+  //       if(err) return next(err);
+  //       console.log(result);
+  //       res.send(result);
+  //     });
 });
 
 
