@@ -1,9 +1,15 @@
-<br>
 
-					<div >
+
 						<div ng-show="nav.isLogin">
-						  <form style='color:red ;background-image:url("http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg");background-repeat:no-repeat;background-size: 1400px' class="well container" ng-submit="nav.loginUser()">
+						  <form style='color:red ;background-image:url("http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg");background-repeat:no-repeat;background-size: 1400px;margin-top:-5px;' class="well container" ng-submit="nav.loginUser()">
 						    <h1 style="color:red;text-align:center;font-family:Sans Serif">TraveLaws Sign In</h1>
+								<md-input-container>
+							    <div style="text-align: center">
+							      <md-button style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center;padding-right:45px"type='button' ng-click="nav.isLogin = false;" class="md-primary">Register</md-button>
+							      <md-button style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center;margin-left:50px;padding-left:65px"type="submit" class="md-primary" >Login</md-button>
+										<br><br>
+							    </div>
+								</md-input-container>
 						    <md-input-container style='color:white; font-weight:bold'>
 							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Username:</label>
 							    <input style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" ng-model="nav.user.username">
@@ -13,13 +19,13 @@
 							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" >Password:</label>
 							    <input  style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" type="password" ng-model="nav.user.password">
 							  </md-input-container>
+								<md-content>
+									<div>
+										<h3 style="text-align:center">Your One Stop Traveling Laws Resource!</h3>
+									</div>
+								</md-content>
 
-							  <md-input-container>
-							    <div style="text-align: center">
-							      <md-button style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center;padding-right:45px"type='button' ng-click="nav.isLogin = false;" class="md-primary">Register</md-button>
-							      <md-button style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center;margin-left:50px;padding-left:65px"type="submit" class="md-primary" >Login</md-button><br><br>
-							    </div>
-								</md-input-container>
+
 							  </form>
 							</div>
 
@@ -51,4 +57,3 @@
 						    </div>
 						  </form>
 						</div>
-					</div>
