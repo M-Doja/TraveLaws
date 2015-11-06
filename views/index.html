@@ -25,7 +25,7 @@
 	</style>
 </head>
 <body ng-controller='GlobalController as nav' style=" margin: 0 auto;">
-				<div style="background-color:#05161f;color:#f6f2a9"layout='row' class="nav navbar-nav navbar-right" >
+				<div ng-hide='!nav.status.username'style="background-color:#05161f;color:#f6f2a9"layout='row' class="nav navbar-nav navbar-right" >
 						<md-button class="navbar-brand" ng-click="nav.logout()">Logout</md-button>
 						<md-button class="navbar-brand" ui-sref="Home">Home</md-button>
 						<!-- <md-button class="navbar-brand" ui-sref="Profile">Profile</md-button> -->

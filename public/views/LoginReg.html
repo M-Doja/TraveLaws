@@ -1,27 +1,37 @@
 
 
 						<div ng-show="nav.isLogin">
-						  <form style='color:red ;background-image:url("http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg");background-repeat:no-repeat;background-size: 1400px;margin-top:-5px;' class="well container" ng-submit="nav.loginUser()">
-						    <h1 style="color:red;text-align:center;font-family:Sans Serif">TraveLaws Sign In</h1>
-								<md-input-container>
-							    <div style="text-align: center">
-							      <md-button style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center;padding-right:45px"type='button' ng-click="nav.isLogin = false;" class="md-primary">Register</md-button>
-							      <md-button style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center;margin-left:50px;padding-left:65px"type="submit" class="md-primary" >Login</md-button>
+						  <form style='color:red ;background-image:url("http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg");background-repeat:no-repeat;background-size: 1400px;margin-top:-10px;' class="well container" ng-submit="nav.loginUser()">
+								<div>
+
+								<md-input-container style="text-align:left;">
+									<div style="margin-top:20px;color:red;text-align:center;font-size:4.5em;font-family:Sans Serif">TraveLaws</div>
+							    <div style="text-align:left;margin-left:20px;margin-top:-100px;margin-bottom:-20px">
+							      <md-button style="font-family:Arial;color:red; font-weight:bold;font-size:15px;text-align:center;"type='button' ng-click="nav.isLogin = false;" class="md-primary">Register</md-button>
+							      <md-button style="font-family:Arial;color:red; font-weight:bold;font-size:15px;text-align:center;padding-bottom:5px;"type="submit" class="md-primary" >Login</md-button>
 										<br><br>
 							    </div>
 								</md-input-container>
+							</div>
+							<div style="background-color:rgba(120,100,0,0.3);margin-bottom:10px; padding-bottom:10px;width:225px;height:430px;margin-bottom:-144px;margin-top:-30px;">
 						    <md-input-container style='color:white; font-weight:bold'>
-							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Username:</label>
-							    <input style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" ng-model="nav.user.username">
+							    <label style="font-family:Arial;color:red; font-weight:bold;font-size:25px;text-align:left">Username:</label>
+							    <input style="font-family:Arial;color:red; font-weight:bold;font-size:25px;text-align:center;padding-bottom:0;" ng-model="nav.user.username">
 							  </md-input-container>
-
-							  <md-input-container>
-							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" >Password:</label>
-							    <input  style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center" type="password" ng-model="nav.user.password">
+							  <md-input-container style='margin-top:-20px;' >
+							    <label style="font-family:Arial;color:red; font-weight:bold;font-size:25px;text-align:left;">Password:</label>
+							    <input  style="font-family:Arial;color:red; font-weight:bold;font-size:25px;text-align:center; padding-bottom:35px; margin-bottom:25px;" type="password" ng-model="nav.user.password">
 							  </md-input-container>
+							</div>
 								<md-content>
 									<div>
-										<h3 style="text-align:center">Your One Stop Traveling Laws Resource!</h3>
+										<h1 style="text-align:center">Your One Stop Traveling Laws Resource!</h1>
+									</div>
+									<div>
+									<p style="text-align:center; text-justify: inter-word;">Get law information about different U.S. states, all from one location.<br> With the TraveLaws app you are able to view current legal information in the following areas <b>:</b></p>
+										<div style="margin-top:-5px;text-align:center; font-weight:bold;text-decoration:none">
+											<p>Genaral Laws<br>Traffic Laws<br>Gun Laws<br>Business Laws</p>
+										</div>
 									</div>
 								</md-content>
 
@@ -30,30 +40,33 @@
 							</div>
 
 						<div ng-show="!nav.isLogin">
-						  <form style='color:red ;background-image:url("http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg");background-repeat:no-repeat;background-size: 1400px'class="well container" ng-submit="nav.registerUser()">
-						    <h1 style="text-align:center;color:red;">Registration</h1>
+						  <form style='color:red ;background-image:url("http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg");background-repeat:no-repeat;background-size: 1400px;margin-top:-10px;padding-top:-30px'class="well container" ng-submit="nav.registerUser()">
+								<div style="color:red;text-align:center;font-size:4.5em;font-family:Sans Serif;padding-top:20px">TraveLaws</div>
+								<div style="text-align:left;margin-top:-100px">
+						      <md-button type="button" ng-click="nav.isLogin = true;" class="md-warn" style='font-family:Arial;font-weight:bolder;font-size:15px;'><b>Back</b></md-button>
+						      <md-button type="submit" class="md-warn" style='font-family:Arial;font-weight:bolder;font-size:15px;'><b>Sign Up</b></md-button>
+						    </div>
+
+								<div style="background-color:rgba(120,100,0,0.3);margin-bottom:10px; padding-bottom:30px;width:225px;height:275px;">
+
 							  <md-input-container>
-							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">User Name</label>
-							    <input  ng-model="nav.user.username" required>
+							    <label style="font-family:Arial;color:red; font-weight:bold;font-size:25px;text-align:center;margin-bottom:-5px">User Name</label>
+							    <input  ng-model="nav.user.username"style='margin-bottom:15px' required>
 							  </md-input-container>
 							  <md-input-container>
-							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Email</label>
-							    <input type="email" ng-model="nav.user.email" required>
+							    <label style="font-family:Arial;color:red; font-weight:bold;font-size:25px;text-align:center;margin-top:-45px">Email</label>
+							    <input type="email" ng-model="nav.user.email"style='margin-bottom:5px' required>
 							  </md-input-container>
 							  <md-input-container>
-							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Password</label>
-							    <input type="password" ng-model="nav.user.password" required>
+							    <label style="font-family:Arial;color:red; font-weight:bold;font-size:25px;text-align:center;margin-top:-35px">Password</label>
+							    <input type="password" ng-model="nav.user.password" style='margin-bottom:-5px'required>
 							  </md-input-container>
 							  <md-input-container>
-							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Confirm Password</label>
-							    <input type="password" ng-model="nav.user.confirmPassword" required>
+							    <label style="font-family:Arial;color:red; font-weight:bold;font-size:25px;text-align:center;margin-top:-25px">Confirm Password</label>
+							    <input type="password" ng-model="nav.user.confirmPassword" style='margin-bottom:-10px' required>
 							  </md-input-container>
 
 						    <div ng-show="nav.user.password && nav.user.confirmPassword && !(nav.user.password === nav.user.confirmPassword)" style="color: red">Your passwords must match.</div>
-
-						    <div style="text-align:center">
-						      <md-button type="button" ng-click="nav.isLogin = true;" class="btn btn-primary">Back</md-button>
-						      <md-button type="submit" class="btn btn-info">Submit</md-button>
-						    </div>
 						  </form>
 						</div>
+								<h1 style="text-align:center; text-justify: inter-word;">Join our community of travellers and share your travel law experiences!</h1>

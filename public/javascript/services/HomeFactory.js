@@ -14,6 +14,7 @@ o.postBlog = function(blog) {
 	console.log('on route to post blog');
 	var q = $q.defer();
 	$http.post('/api/blog/', blog).then(function(res){
+		console.log('blog posted');
 		q.resolve(res.data);
 	});
 	return q.promise;
