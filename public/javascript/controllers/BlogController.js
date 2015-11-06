@@ -8,16 +8,24 @@
     vm.posts = [];
     vm.posts.push(vm.blog);
   	vm.edittedBlog = {};
-    vm.comment = {};
     vm.showComment = false;
     vm.NoComment = false;
     vm.YesComment = false;
+    vm.images = [
+      'http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg',
+      'http://wikitravel.org/upload/shared//c/c0/South_America_Banner.jpg',
+      'http://wikitravel.org/upload/shared//b/b1/Dalton_Highway_Banner.jpg'
+    ];
 
     if(localStorage.oneBlog){
       vm.oneBlog = JSON.parse(localStorage.oneBlog);
       console.log(vm.oneBlog);
       localStorage.removeItem('oneBlog');
     }
+    // if(localStorage.comment) {
+    //   vm.comment = JSON.parse(localStorage.comment);
+    //   localStorage.removeItem('comment')
+    // }
     vm.ShowBlogs = function() {
       console.log('show blog');
     HomeFactory.getAllBlogs(vm.blog).then(function(res){
@@ -44,7 +52,10 @@
     localStorage.setItem("oneBlog", JSON.stringify(oneBlog));
     $state.go('BlogPage',{id: oneBlog._id});
   };
-
+vm.addCom = function(comment){
+  localStorage.setItem('comment', JSON.stringify(comment));
+  $state.go('BlogPage');
+}
 
   vm.getCopy = function(blog) {
   					return angular.copy(blog);
@@ -70,20 +81,20 @@
         $state.go('Blog');
 				});
 			};
-      vm.addCom = function(){
-      			console.log("adding comment");
-      		HomeFactory.postCom(vm.comment).then(function(res){
-      				console.log('comment added');
-      			vm.comment = res.body;
-      			console.log(res.body);
-      			if(!$stateParams.id) $state.go('Home');
-      			HomeFactory.getBlogById($stateParams.id).then(function(res){
-      				console.log(res);
-      				vm.blog = res;
-      			});
-      		});
-      		vm.comment = {};
-      	};
+      // vm.addCom = function(){
+      // 			console.log("adding comment");
+      // 		HomeFactory.postCom(vm.comment).then(function(res){
+      // 				console.log('comment added');
+      // 			vm.comment = res.body;
+      // 			console.log(res.body);
+      // 			if(!$stateParams.id) $state.go('Home');
+      // 			HomeFactory.getBlogById($stateParams.id).then(function(res){
+      // 				console.log(res);
+      // 				vm.blog = res;
+      // 			});
+      // 		});
+      // 		vm.comment = {};
+      // 	};
       	vm.showCom = function(){
       		HomeFactory.displayCom(vm.comment).then(function(res){
       			vm.comment = res;

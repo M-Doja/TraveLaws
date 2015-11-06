@@ -24,22 +24,22 @@
 							</div>
 
 						<div ng-show="!nav.isLogin">
-						  <form class="well container" ng-submit="nav.registerUser()">
+						  <form style='color:red ;background-image:url("http://wikitravel.org/upload/shared//0/0a/Pan_American_Highway_Banner.jpg");background-repeat:no-repeat;background-size: 1400px'class="well container" ng-submit="nav.registerUser()">
 						    <h1 style="text-align:center;color:red;">Registration</h1>
 							  <md-input-container>
-							    <label style="font-family:Ariel;">User Name</label>
+							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">User Name</label>
 							    <input  ng-model="nav.user.username" required>
 							  </md-input-container>
 							  <md-input-container>
-							    <label style="font-family:Ariel;">Email</label>
+							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Email</label>
 							    <input type="email" ng-model="nav.user.email" required>
 							  </md-input-container>
 							  <md-input-container>
-							    <label style="font-family:Ariel;">Password</label>
+							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Password</label>
 							    <input type="password" ng-model="nav.user.password" required>
 							  </md-input-container>
 							  <md-input-container>
-							    <label style="font-family:Ariel;">Confirm Password</label>
+							    <label style="font-family:Ariel;color:red; font-weight:bold;font-size:25px;text-align:center">Confirm Password</label>
 							    <input type="password" ng-model="nav.user.confirmPassword" required>
 							  </md-input-container>
 

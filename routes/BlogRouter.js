@@ -87,6 +87,22 @@ router.delete('/:id', function(req, res, next){
   });
 });
 
+//  posting comment   //----------
+router.post('/',  function(req, res, next){
+console.log('right in post router');
+var comment = {
+body: req.body.body
+// commenter: req.payload.username
+};
+req.blog.comments.push(comment);
+req.blog.save(function(err, result){
+if(err) return next(err);
+if(!result) return next(err);
+console.log('leaving router');
+res.send(req.blog);
+});
+});
+
 
 
 module.exports = router;

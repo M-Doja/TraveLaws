@@ -45,8 +45,18 @@ o.EditBlog = function(id){
 					return q.promise;
 				};
 
-
-
+				// o.postCom = function(comment){
+				// 	var q = $q.defer();
+				// 	// console.log(storyId);
+				// 	console.log(comment);
+				// 	console.log('post here');
+				// 	$http.post('/api/blog/', comment).then(function(res){
+				// 		q.resolve(res.data);
+				// 		console.log("I'm posted");
+				// 	});
+				// 	return q.promise;
+				// };
+				//
 
 
 

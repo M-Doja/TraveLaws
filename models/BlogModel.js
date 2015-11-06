@@ -9,10 +9,10 @@ var BlogSchema = new mongoose.Schema({
   deleted: Date,
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   comments: [{
-    body: { required: true, type: String },
-    commenter: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User', unique: true }],
-    createdOn: Date
-  }]
+      commenter: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+        body: String,
+        postedOn: Date
+      }]
 });
 
 mongoose.model('Blog', BlogSchema);
