@@ -8,3 +8,18 @@
     width: 100%;
     height: auto;
 }*/*/
+.picContainer{
+  max-height: 128px;
+  max-width: 200px;
+}
+#footer {
+  margin-top:50px;
+}
+
+md-grid-tile-footer figcaption{
+  width: 100%;
+}
+
+md-grid-tile-footer figcaption .md-button {
+  margin: 0;
+}

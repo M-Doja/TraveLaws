@@ -2,13 +2,14 @@
   'ues strict';
   angular.module('app')
   .controller('ProfileController', ProfileController);
-  function ProfileController($state, $stateParams, UserFactory) {
+  function ProfileController($state, $stateParams, UserFactory, HomeFactory) {
     var vm = this;
     vm.statevisit = {};
     vm.profile = {};
     vm.edittedProfile = {};
+    vm.States = HomeFactory.States;
 
-
+    // FINDING AN INDIVIDUAL PROFILE FROM CACHE
     if(localStorage.oneProfile){
       vm.oneProfile = JSON.parse(localStorage.oneProfile);
       console.log(vm.oneProfile);

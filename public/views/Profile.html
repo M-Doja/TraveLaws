@@ -1,5 +1,53 @@
 <div style="background-color:#c7b5af"ng-controller='ProfileController as vm'>
-  <h1 style="text-align:center">User Profiles</h1>
+  <md-grid-list style="margin-right:5px;margin-left:5px;padding-top:1px"
+       md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+       md-row-height-gt-md="1:1" md-row-height="2:2"
+       md-gutter="12px" md-gutter-gt-sm="8px" >
+        <!-- FOR LIST OF STATES THAT WILL BE USED TO SELECT PROFILES FROM THAT STATE -->
+   <md-grid-tile class="gray"
+       md-rowspan="3" md-colspan="2" md-colspan-sm="1">
+     <md-grid-tile-header>
+       <h1 style='padding:25px;'>States</h1>
+     </md-grid-tile-header>
+     <md-content style="width:410px;">
+       <div ng-repeat='s in vm.States'>
+         <md-card style="width:400px; margin-bottom:-25px;">
+           <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
+           <md-card-content id='statePic' style="background-image:url('{{s.image}}');background-repeat: no-repeat;text-align:center;background-size:10%;padding-top:10px">
+             <h2 class="md-title"><a href='#' >{{s.state}}</a></h2>
+           </md-card-content>
+         </md-card>
+       </div>
+     </md-content>
+   </md-grid-tile>
+            <!-- PERSONAL PROFILES -->
+   <md-grid-tile ng-repeat='p in vm.profile | orderBy: "memberName"' class="green">
+     <div class="picContainer" >
+       <img  style="max-width:100%;max-height:100%"id='proPic'src="{{p.photo}}" alt='{{p.memberName}}'/>
+     </div style='padding-bottom:5px;'><br>
+     <md-grid-tile-footer style="width: 100%;">
+       <md-button class='md-warn' style='font-size:12px; width: 100%;' ng-click='vm.getProfileById(p)' >View {{p.memberName}}</md-button>
+     </md-grid-tile-footer>
+   </md-grid-tile>
+   <!-- <md-grid-tile class="yellow">
+     <md-grid-tile-footer>
+       <h3>#3: (1r x 1c)</h3>
+     </md-grid-tile-footer>
+   </md-grid-tile>
+   <md-grid-tile class="blue">
+     <md-grid-tile-footer>
+       <h3>#4: (1r x 1c)</h3>
+     </md-grid-tile-footer>
+   </md-grid-tile>
+   <md-grid-tile class="yellow">
+     <md-grid-tile-footer>
+       <h3>#5: (1r x 1c)</h3>
+     </md-grid-tile-footer>
+   </md-grid-tile> -->
+ </md-grid-list>
+
+
+  <!-- <h1 style="text-align:center">User Profiles</h1>
   <hr>
   <div layout="row">
     <md-input-container>
@@ -21,5 +69,5 @@
       </md-input-container>
     </md-content layout-padding >
     <hr>
-  </div>
+  </div> -->
 </div> <!-- End of controller  -->
