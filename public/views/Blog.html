@@ -14,9 +14,13 @@
   	</div>
   </div>
 
+    <md-input-container>
+      <md-button  ui-sref='AddBlog' >Add A Blog</md-button>
+    </md-input-container>
+
 
         <!-- Display all the blogs -->
-  <div ng-repeat="b in vm.blog | orderBy:'title'"  >
+  <div ng-repeat="b in vm.blog | orderBy:'-date'"  >
     <md-content layout-padding style="background-color:#cdafa2">
       <h1 style="padding-left:50px">{{b.title}}</h1>
       <img style="padding-left:50px" height='400' width='400' ng-src='{{b.photo}}'>

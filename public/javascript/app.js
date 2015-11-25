@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	angular.module('app', ['ui.router', 'ngMaterial', 'angular-carousel'])
+	angular.module('app', ['ui.router', 'ngMaterial', 'angular-carousel', 'btford.modal'])
 	.config(Config);
 	function Config($stateProvider, $urlRouterProvider, $httpProvider) {
 		$stateProvider.state('Login',{

@@ -22,12 +22,10 @@ router.param('id', function(req, res, next, id){
   });
 });
 
-        // reference poll app
 
         // ADD BLOG
 router.post('/',  function(req, res, next) {
   console.log('hello world');
-  // console.log(req.body);
   var blog = new Blog(req.body);
   blog.created = new Date();
   blog.deleted = null;
@@ -44,31 +42,10 @@ router.get('/', function(req, res, next) {
     if(err) return next(err);
     res.send(result);
   });
-  // Profile
-  //   .findOne({_id: req.params.id},'blogs',function(err,result){
-  //     if(err) return next(err);
-  //     if(!result) return next({err: "Couldnt find a user with that id"});
-  //     // console.log(result);
-  //   })
-  //   .populate('createdBy', 'user')
-  //   .exec(
-  //     function(err,result){
-  //       if(err) return next(err);
-  //       console.log(result);
-  //       res.send(result);
-  //     });
 });
 
 
-      // GET SINGLE BLOG BY ID
-// router.get('/:id', function(req, res, next) {
-//   console.log("in the one blog route");
-//   Blog.findOne({_id: req.params.id}, function(err, result) {
-//     if(err) return next(err);
-//     console.log(result);
-//     res.send(result);
-//   });
-// });
+
 
       // EDIT BLOG
 router.put('/', function(req, res, next) {
@@ -89,7 +66,9 @@ router.delete('/:id', function(req, res, next){
 
 //  posting comment   //----------
 router.post('/',  function(req, res, next){
+  Blog.findOne({_id: req.body.body})
 console.log('right in post router');
+console.log(req.body);
 var comment = {
 body: req.body.body
 // commenter: req.payload.username

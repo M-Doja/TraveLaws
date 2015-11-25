@@ -37,6 +37,14 @@ o.getAllBlogs = function(){
 	return q.promise;
 };
 
+// o.addCom = function() {
+// 	var q = $q.defer();
+// $http.post('/api/blog').then(function() {
+// 		q.resolve();
+// 	});
+// 	return q.promise;
+// };
+
 o.EditBlog = function(id){
 			var q= $q.defer();
 			$http.put('/api/blog', id).then(function(res){
@@ -54,18 +62,18 @@ o.EditBlog = function(id){
 					return q.promise;
 				};
 
-				// o.postCom = function(comment){
-				// 	var q = $q.defer();
-				// 	// console.log(storyId);
-				// 	console.log(comment);
-				// 	console.log('post here');
-				// 	$http.post('/api/blog/', comment).then(function(res){
-				// 		q.resolve(res.data);
-				// 		console.log("I'm posted");
-				// 	});
-				// 	return q.promise;
-				// };
-				//
+				o.addCom = function(comment){
+					var q = $q.defer();
+					// console.log(storyId);
+					console.log(comment);
+					console.log('post here');
+					$http.post('/api/blog/', comment).then(function(res){
+						q.resolve(res.data);
+						console.log("I'm posted");
+					});
+					return q.promise;
+				};
+
 
 
 

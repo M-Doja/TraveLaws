@@ -2,7 +2,7 @@
   'ues strict';
   angular.module('app')
   .controller('ProfileController', ProfileController);
-  function ProfileController($state, $stateParams, UserFactory, HomeFactory) {
+  function ProfileController($state, $stateParams, UserFactory, HomeFactory, btfModal) {
     var vm = this;
     vm.statevisit = {};
     vm.profile = {};

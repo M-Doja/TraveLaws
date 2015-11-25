@@ -22,10 +22,10 @@
       console.log(vm.oneBlog);
       localStorage.removeItem('oneBlog');
     }
-    // if(localStorage.comment) {
-    //   vm.comment = JSON.parse(localStorage.comment);
-    //   localStorage.removeItem('comment')
-    // }
+    if(localStorage.comment) {
+      vm.comment = JSON.parse(localStorage.comment);
+      localStorage.removeItem('comment')
+    }
     vm.ShowBlogs = function() {
       console.log('show blog');
     HomeFactory.getAllBlogs(vm.blog).then(function(res){
@@ -52,9 +52,10 @@
     localStorage.setItem("oneBlog", JSON.stringify(oneBlog));
     $state.go('BlogPage',{id: oneBlog._id});
   };
-vm.addCom = function(comment){
-  localStorage.setItem('comment', JSON.stringify(comment));
-  $state.go('BlogPage');
+vm.addCom = function(){
+  HomeFactory.addCom(vm.comment).then(function() {
+  $state.go('BlogPage',{id: oneBlog._id});
+  });
 }
 
   vm.getCopy = function(blog) {
